@@ -1,0 +1,14 @@
+<h1>Add a item</h1>
+
+<%= form_with model: @item do |form| %>
+  <% if @item.errors.any? %>
+    <% @item.errors.full_messages.each do |error| %>
+      <%= error %>
+    <% end %>
+  <% end %>
+
+  <%= form.label :name %>
+  <%= form.text_field :name, placeholder: 'Item name' %>
+
+  <%= form.submit %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Inventory</h1>
+
+<ul>
+  <% @items.each do |item| %>
+    <li>
+      <%= item.name %>
+      <%= link_to 'Edit', edit_item_path(item) %>
+      <%= link_to 'Delete', item_path(item), data: {turbo_method: :delete, turbo_confirm: 'Are you sure?'} %>
+    </li>
+  <% end %>
+</ul>
